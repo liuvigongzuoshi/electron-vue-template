@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "dev": "npm run serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
@@ -40,6 +41,7 @@
     "less-loader": "^5.0.0",
     "lint-staged": "^9.5.0",
     "prettier": "^1.19.1",
+    "svg-sprite-loader": "^5.2.1",
     "typescript": "~3.9.3",
     "vue-cli-plugin-electron-builder": "~2.0.0-rc.5"
   },
