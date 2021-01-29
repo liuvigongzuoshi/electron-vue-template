@@ -23,7 +23,7 @@ module.exports = {
   //     chunks: ["chunk-vendors", "chunk-common", "index"]
   //   },
   //   background: {
-  //     entry: "src/background/index.js",
+  //     entry: "src/background/index.ts",
   //     filename: "background.html",
   //     chunks: ["background"]
   //   }
@@ -113,13 +113,13 @@ module.exports = {
   // https://nklayman.github.io/vue-cli-plugin-electron-builder/guide/configuration.html#table-of-contents
   pluginOptions: {
     electronBuilder: {
-      // nodeIntegration: true,
-      preload: "src/renderer/preload.js",
+      preload: "src/renderer/preload.ts",
       chainWebpackMainProcess(config) {
-        config.entry("child-process").add(resolve("src/main/child-process.js"))
+        config.entry("child-process").add(resolve("src/main/child-process.ts"))
       },
-      mainProcessFile: "src/main/index.js",
+      mainProcessFile: "src/main/index.ts",
       rendererProcessFile: "src/renderer/main.ts"
+      // nodeIntegration: true,
       // mainProcessWatch: [],
       // https://github.com/nklayman/vue-cli-plugin-electron-builder/issues/820
       // externals: []

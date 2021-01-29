@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const { promises: fsPromises } = require("fs")
-const { ipcMain } = require("electron")
-const { getWindows } = require("./window")
+import { promises as fsPromises } from "fs"
+import { ipcMain } from "electron"
+import { getWindows } from "./window"
 
 // let apiIndex = 0
 
@@ -23,7 +22,9 @@ const { getWindows } = require("./window")
 // })
 
 ipcMain.handle("readFile", async (event, ...args) => {
-  return fsPromises.readFile(...args)
+  const path = args[0]
+  const options = args[1]
+  return fsPromises.readFile(path, options)
 })
 
 ipcMain.on("asynchronous", (event, arg) => {
